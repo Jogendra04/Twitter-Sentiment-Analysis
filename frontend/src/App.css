@@ -1,0 +1,436 @@
+/* =========================
+   Main Container
+========================= */
+
+.container {
+  width: 100%;
+  max-width: 700px;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-5px);
+}
+
+/* =========================
+   Header
+========================= */
+
+.header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.header h1 {
+  color: #1e3a8a;
+  font-size: 2.3rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.header p {
+  color: #64748b;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* =========================
+   Tweet Input
+========================= */
+
+.tweet-input {
+  width: 100%;
+  min-height: 170px;
+  padding: 20px;
+
+  border: 2px solid transparent;
+  border-radius: 18px;
+
+  background: #f8fafc;
+
+  font-size: 16px;
+  font-family: inherit;
+
+  resize: none;
+  outline: none;
+
+  transition: all 0.3s ease;
+
+  margin-bottom: 20px;
+}
+
+.tweet-input::placeholder {
+  color: #94a3b8;
+}
+
+.tweet-input:focus {
+  background: white;
+  border-color: #2563eb;
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.15);
+}
+
+/* =========================
+   Error
+========================= */
+
+.error {
+  color: #dc2626;
+  font-size: 14px;
+  margin-top: -10px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* =========================
+   Predict Button
+========================= */
+
+.predict-btn {
+  width: 100%;
+  padding: 16px;
+
+  border: none;
+  border-radius: 16px;
+
+  background: linear-gradient(
+    90deg,
+    #2563eb,
+    #3b82f6
+  );
+
+  color: white;
+  font-size: 17px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+}
+
+.predict-btn:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 35px rgba(37, 99, 235, 0.35);
+}
+
+.predict-btn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.predict-btn:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* =========================
+   Result Card
+========================= */
+
+.result {
+  margin-top: 35px;
+  padding: 30px;
+
+  background: #ffffff;
+
+  border: 2px solid #e2e8f0;
+
+  border-radius: 20px;
+
+  text-align: center;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+
+  animation: fadeIn 0.4s ease;
+
+  transition: 0.3s;
+}
+
+.result:hover {
+  transform: translateY(-3px);
+}
+
+.result h2 {
+  color: #334155;
+  margin-bottom: 18px;
+}
+
+.result p {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+/* =========================
+   Confidence
+========================= */
+
+.confidence {
+  margin-top: 30px;
+}
+
+.confidence h3 {
+  margin-bottom: 12px;
+  color: #475569;
+}
+
+.progress {
+  width: 100%;
+  height: 16px;
+  background-color: #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  transition: width 0.6s ease;
+  border-radius: 10px;
+}
+
+.confidence span {
+  display: block;
+  margin-top: 12px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+/* =========================
+   Footer
+========================= */
+
+.footer {
+  margin-top: 35px;
+  padding-top: 20px;
+
+  border-top: 1px solid #e2e8f0;
+
+  text-align: center;
+
+  color: #94a3b8;
+
+  font-size: 14px;
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 768px) {
+
+  .container {
+    padding: 25px;
+    border-radius: 18px;
+  }
+
+  .header h1 {
+    font-size: 1.8rem;
+  }
+
+  .header p {
+    font-size: 0.95rem;
+  }
+
+  .tweet-input {
+    min-height: 150px;
+  }
+
+  .predict-btn {
+    font-size: 16px;
+  }
+
+  .result p {
+    font-size: 26px;
+  }
+
+}
+
+/* =========================
+   Animation
+========================= */
+
+@keyframes fadeIn {
+
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+.button-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.button-group .predict-btn {
+  flex: 2;
+}
+
+.clear-btn {
+  flex: 1;
+
+  border: none;
+  border-radius: 16px;
+
+  background: #ef4444;
+
+  color: white;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.clear-btn:hover {
+  background: #dc2626;
+  transform: translateY(-3px);
+}
+
+
+@media(max-width:768px){
+
+  .button-group{
+    flex-direction:column;
+  }
+
+}
+.button-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.clear-btn {
+  flex: 1;
+  border: none;
+  border-radius: 16px;
+
+  background: #ef4444;
+  color: white;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.clear-btn:hover {
+  background: #dc2626;
+  transform: translateY(-3px);
+}
+
+@media(max-width:768px){
+
+  .button-group {
+    flex-direction: column;
+  }
+
+}
+.history {
+  margin-top:35px;
+}
+
+.history h2 {
+  color:#334155;
+  margin-bottom:20px;
+}
+
+.history-card {
+
+  background:#f8fafc;
+
+  border-radius:16px;
+
+  padding:15px;
+
+  margin-bottom:12px;
+
+  border:1px solid #e2e8f0;
+
+}
+
+.history-card p {
+
+  color:#475569;
+
+  margin-bottom:10px;
+
+}
+
+.history-card strong {
+
+  color:#2563eb;
+
+  margin-right:15px;
+
+}
+
+.history-card span {
+
+  font-weight:bold;
+
+}
+.predict-btn:disabled {
+  opacity:0.7;
+  cursor:not-allowed;
+}
+.spinner {
+  display: inline-block;
+
+  width: 16px;
+  height: 16px;
+
+  margin-right: 8px;
+
+  border: 3px solid rgba(255,255,255,0.5);
+
+  border-top-color: white;
+
+  border-radius: 50%;
+
+  animation: spin 0.8s linear infinite;
+}
+
+
+@keyframes spin {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+.character-count {
+
+  text-align: right;
+
+  color: #64748b;
+
+  font-size: 14px;
+
+  margin-top: -15px;
+
+  margin-bottom: 20px;
+
+}

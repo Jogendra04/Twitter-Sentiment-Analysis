@@ -1,6 +1,6 @@
 # Python cache
 
-**pycache**/
+__pycache__/
 *.py[cod]
 
 # Virtual Environment
@@ -24,6 +24,3 @@ venv/
 .DS_Store
 Thumbs.db
 desktop.ini
-
-
-models/
