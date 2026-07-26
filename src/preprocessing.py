@@ -3,12 +3,12 @@ import pandas as pd
 
 from sklearn.base import BaseEstimator, TransformerMixin
 import nltk
-
-nltk.download("stopwords", quiet=True)
-nltk.download("punkt", quiet=True)
-nltk.download("wordnet", quiet=True)
 from nltk.corpus import stopwords
 
+try:
+    stopwords.words("english")
+except LookupError:
+    nltk.download("stopwords", quiet=True)
 stop_words = set(stopwords.words("english"))
 
 # Text Preprocessing Function
